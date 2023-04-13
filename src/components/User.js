@@ -30,7 +30,8 @@ const User = () => {
       )}
 
       {!profile && (
-        <SkeletonProfile />
+        // <SkeletonProfile />
+        <SkeletonProfile theme={"dark"} />
         // <div className="skeleton">
         //   loading...
         //   {/* <div className="skeleton-avatar"></div>
