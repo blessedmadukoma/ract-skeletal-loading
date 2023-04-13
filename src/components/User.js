@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import SkeletonProfile from "../skeletons/SkeletonProfile";
 
 const User = () => {
   const [profile, setProfile] = useState(null);
@@ -29,12 +30,13 @@ const User = () => {
       )}
 
       {!profile && (
-        <div className="skeleton">
-          loading...
-          {/* <div className="skeleton-avatar"></div>
-          <div className="skeleton-author"></div>
-          <div className="skeleton-details"></div> */}
-        </div>
+        <SkeletonProfile />
+        // <div className="skeleton">
+        //   loading...
+        //   {/* <div className="skeleton-avatar"></div>
+        //   <div className="skeleton-author"></div>
+        //   <div className="skeleton-details"></div> */}
+        // </div>
       )}
     </div>
   );
