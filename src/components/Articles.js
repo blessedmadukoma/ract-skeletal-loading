@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import SkeletonElement from "../skeletons/SkeletonElement";
+import SkeletonArticle from "../skeletons/SkeletonArticle";
 
 const Articles = () => {
   const [articles, setArticles] = useState(null);
@@ -17,11 +17,6 @@ const Articles = () => {
     <div className="article">
       <h2>Article Details</h2>
 
-      <SkeletonElement type="title" />
-      <SkeletonElement type="text" />
-      <SkeletonElement type="thumbnail" />
-      <SkeletonElement type="avatar" />
-
       {articles && (
         <div className="articles">
           {articles.map((article) => (
@@ -33,14 +28,17 @@ const Articles = () => {
         </div>
       )}
 
-      {!articles && (
-        <div className="skeleton">
-          loading...
-          {/* <div className="skeleton-avatar"></div>
-          <div className="skeleton-author"></div>
-          <div className="skeleton-details"></div> */}
-        </div>
-      )}
+      {!articles &&
+        [1, 2, 3, 4, 5].map((n) => (
+          <SkeletonArticle key={n} />
+        ))
+        // <div className="skeleton">
+        //   loading...
+        //   {/* <div className="skeleton-avatar"></div>
+        //   <div className="skeleton-author"></div>
+        //   <div className="skeleton-details"></div> */}
+        // </div>
+      }
     </div>
   );
 };
